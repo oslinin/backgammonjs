@@ -181,6 +181,14 @@ function App() {
       client.reqPlayRandom(self.getSelectedRuleName());
     });
 
+    $('#btn-play-solo').click(function (e) {
+      self.setIsChallenging(false);
+      self.setIsWaiting(true);
+      self.updateView();
+      // TODO: Store selected rule in cookie
+      client.reqPlaySolo(self.getSelectedRuleName());
+    });
+
     $('#btn-challenge-friend').click(function (e) {
       self.setIsChallenging(false);
       self.setIsWaiting(true);
